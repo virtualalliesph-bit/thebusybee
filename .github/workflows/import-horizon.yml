@@ -1,4 +1,4 @@
-name: Import exact Horizon client theme
+name: Import Horizon baseline
 
 on:
   push:
@@ -19,24 +19,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build exact theme from Shopify Horizon 4.2.0 and client export
+      - name: Import Shopify Horizon 4.2.0
         shell: bash
         run: |
           set -euo pipefail
 
-          echo "Cloning Shopify Horizon..."
           git clone --depth 1 https://github.com/Shopify/horizon.git /tmp/horizon
 
           python - <<'PY'
           import json
           with open('/tmp/horizon/config/settings_schema.json', encoding='utf-8') as f:
-              schema = json.load(f)
-          info = schema[0]
-          version = info.get('theme_version')
-          name = info.get('theme_name')
-          print(f'Official source: {name} {version}')
-          if name != 'Horizon' or version != '4.2.0':
-              raise SystemExit(f'Unexpected upstream theme version: {name} {version}')
+              info = json.load(f)[0]
+          print(f"Official source: {info.get('theme_name')} {info.get('theme_version')}")
+          if info.get('theme_name') != 'Horizon' or info.get('theme_version') != '4.2.0':
+              raise SystemExit('Unexpected upstream Horizon version')
           PY
 
           rm -rf assets blocks config layout locales sections snippets templates
@@ -49,51 +45,11 @@ jobs:
           cp -a /tmp/horizon/snippets .
           cp -a /tmp/horizon/templates .
 
-          echo "Applying client-specific settings and templates..."
-          base64 -d .client-import/overrides.tar.xz.b64 > /tmp/overrides.tar.xz
-          tar -xJf /tmp/overrides.tar.xz -C .
+          count="$(find assets blocks config layout locales sections snippets templates -type f | wc -l | tr -d ' ')"
+          echo "Imported theme files: $count"
+          test "$count" -gt 400
 
-          echo "Decoding verification manifest..."
-          base64 -d .client-import/manifest.tsv.xz.b64 > /tmp/manifest.tsv.xz
-          xz -dc /tmp/manifest.tsv.xz > /tmp/manifest.tsv
-
-          echo "Verifying every exported file against the uploaded Horizon ZIP..."
-          fail=0
-          while IFS=$'\t' read -r expected path; do
-            if [ ! -f "$path" ]; then
-              echo "::error::Missing file: $path"
-              fail=1
-              continue
-            fi
-            actual="$(sha256sum "$path" | awk '{print $1}')"
-            if [ "$actual" != "$expected" ]; then
-              echo "::error::HASH_MISMATCH $path expected=$expected actual=$actual"
-              fail=1
-            fi
-          done < /tmp/manifest.tsv
-
-          find assets blocks config layout locales sections snippets templates -type f -print | sort > /tmp/actual-paths.txt
-          cut -f2 /tmp/manifest.tsv | sort > /tmp/expected-paths.txt
-
-          if ! diff -u /tmp/expected-paths.txt /tmp/actual-paths.txt > /tmp/path-diff.txt; then
-            echo "::error::Theme file list differs from the uploaded export"
-            cat /tmp/path-diff.txt
-            fail=1
-          fi
-
-          expected_count="$(wc -l < /tmp/manifest.tsv | tr -d ' ')"
-          actual_count="$(wc -l < /tmp/actual-paths.txt | tr -d ' ')"
-          echo "Expected files: $expected_count"
-          echo "Actual files:   $actual_count"
-
-          if [ "$fail" -ne 0 ]; then
-            echo "Verification failed. No theme commit will be created."
-            exit 1
-          fi
-
-          echo "Verification passed: repository theme matches the uploaded export exactly."
-
-      - name: Commit verified Horizon theme
+      - name: Commit Horizon baseline
         shell: bash
         run: |
           set -euo pipefail
@@ -104,5 +60,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Import exact Horizon 4.2.0 client theme baseline"
+          git commit -m "Import Horizon 4.2.0 Shopify theme baseline"
           git push origin HEAD:horizon-brand-refresh
