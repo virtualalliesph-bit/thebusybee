@@ -6,6 +6,7 @@ on:
       - theme-import-staging
     paths:
       - 'refresh-import.trigger'
+      - '.github/workflows/finish-refresh-import.yml'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +26,10 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/refresh-theme
-          cat .theme-import-xz/part-*.b64 | base64 --decode > /tmp/refresh-theme.tar.xz
+          : > /tmp/refresh-theme.tar.xz
+          for f in .theme-import-xz/part-*.b64; do
+            base64 --decode "$f" >> /tmp/refresh-theme.tar.xz
+          done
           tar -xJf /tmp/refresh-theme.tar.xz -C /tmp/refresh-theme
           echo "Extracted files:"
           find /tmp/refresh-theme -type f | wc -l
@@ -34,7 +38,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s dotglob
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -a /tmp/refresh-theme/. .
 
