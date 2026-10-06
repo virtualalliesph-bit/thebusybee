@@ -6,6 +6,7 @@ on:
       - horizon-rebuild
     paths:
       - 'horizon-bootstrap.trigger'
+      - '.github/workflows/bootstrap-horizon.yml'
   workflow_dispatch:
 
 permissions:
