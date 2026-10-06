@@ -500,6 +500,97 @@
         "padding-block-start": 28,
         "padding-block-end": 56
       }
+    },
+    "newsletter_signup": {
+      "type": "section",
+      "blocks": {
+        "newsletter_heading": {
+          "type": "text",
+          "name": "Newsletter heading",
+          "settings": {
+            "text": "<h2>Subscribe to our emails</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h3",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "newsletter_copy": {
+          "type": "text",
+          "name": "Newsletter text",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "newsletter_form": {
+          "type": "email-signup",
+          "name": "Email signup",
+          "settings": {
+            "width": "custom",
+            "custom_width": 50
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "newsletter_heading",
+        "newsletter_copy",
+        "newsletter_form"
+      ],
+      "name": "Subscribe to our emails",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "#FEE693",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000000",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "padding-block-start": 56,
+        "padding-block-end": 56
+      }
     }
   },
   "order": [
@@ -507,6 +598,7 @@
     "busy_bee_intro",
     "product_list_fa6P9H",
     "sugar_scrub_story",
-    "ingredients_story"
+    "ingredients_story",
+    "newsletter_signup"
   ]
 }
