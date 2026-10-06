@@ -292,11 +292,221 @@
         "padding-block-start": 52,
         "padding-block-end": 56
       }
+    },
+    "sugar_scrub_story": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "link": "shopify://collections/whipped-sugar-scrub",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 18
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "name": "Heading",
+              "settings": {
+                "text": "<h2>What is sugar scrub?</h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-heading--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "<p>Our sugar scrubs consists of large sugar crystals. The idea is to massage these granules into your skin to remove debris and dead skin cells.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button": {
+              "type": "button",
+              "name": "Shop now",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/whipped-sugar-scrub",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading",
+            "text",
+            "button"
+          ]
+        }
+      },
+      "name": "What is sugar scrub?",
+      "settings": {
+        "media_position": "right",
+        "media_width": "medium",
+        "media_height": "50svh",
+        "section_width": "page-width",
+        "extend_media": false,
+        "background_color": "#FBE6C8",
+        "padding-block-start": 56,
+        "padding-block-end": 28
+      }
+    },
+    "ingredients_story": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "image",
+            "link": "shopify://collections/whipped-sugar-scrub",
+            "video_loop": true,
+            "video_autoplay": false,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 18
+          },
+          "blocks": {
+            "heading": {
+              "type": "text",
+              "name": "Heading",
+              "settings": {
+                "text": "<h2>We like cute packagings, but we love what's inside!</h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-heading--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "<p>Oatmeal - Incredibly soothing and hydrating</p><p>Green Tea - Powerful anti-inflammatory and antibacterial properties</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button": {
+              "type": "button",
+              "name": "Shop now",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://collections/whipped-sugar-scrub",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading",
+            "text",
+            "button"
+          ]
+        }
+      },
+      "name": "What's inside",
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "50svh",
+        "section_width": "page-width",
+        "extend_media": false,
+        "background_color": "#FFDEAB",
+        "padding-block-start": 28,
+        "padding-block-end": 56
+      }
     }
   },
   "order": [
     "hero_jVaWmY",
     "busy_bee_intro",
-    "product_list_fa6P9H"
+    "product_list_fa6P9H",
+    "sugar_scrub_story",
+    "ingredients_story"
   ]
 }
