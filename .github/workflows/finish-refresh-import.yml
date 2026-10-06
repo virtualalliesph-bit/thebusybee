@@ -1,0 +1,49 @@
+name: Finish Refresh baseline import
+
+on:
+  push:
+    branches:
+      - theme-import-staging
+    paths:
+      - 'refresh-import.trigger'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: theme-import-staging
+
+      - name: Reassemble original Shopify theme
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/refresh-theme
+          cat .theme-import-xz/part-*.b64 | base64 --decode > /tmp/refresh-theme.tar.xz
+          tar -xJf /tmp/refresh-theme.tar.xz -C /tmp/refresh-theme
+          echo "Extracted files:"
+          find /tmp/refresh-theme -type f | wc -l
+
+      - name: Replace staging content with extracted theme
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s dotglob
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a /tmp/refresh-theme/. .
+
+      - name: Commit clean Refresh baseline
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import complete original Refresh theme baseline"
+          git push origin HEAD:theme-import-staging
