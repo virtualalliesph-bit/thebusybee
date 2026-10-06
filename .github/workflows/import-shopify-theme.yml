@@ -25,7 +25,7 @@ jobs:
             echo "No theme-import directory found. Nothing to import."
             exit 0
           fi
-          cat theme-import/part-* > /tmp/shopify-theme.zip
+          cat theme-import/part-* | base64 --decode > /tmp/shopify-theme.zip
           unzip -o /tmp/shopify-theme.zip -d .
           rm -rf theme-import
 
