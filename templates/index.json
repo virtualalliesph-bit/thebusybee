@@ -401,6 +401,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "shopify://shop_images/5f238b1f-3b7a-472d-8639-da000ee09278.png",
             "link": "shopify://collections/whipped-sugar-scrub",
             "video_loop": true,
             "video_autoplay": false,
@@ -517,6 +518,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "shopify://shop_images/b0d2bd86-2ba5-451b-bc97-6e619aacd0f4.png",
             "link": "shopify://collections/whipped-sugar-scrub",
             "video_loop": true,
             "video_autoplay": false,
