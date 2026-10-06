@@ -1,0 +1,43 @@
+name: Import Shopify theme
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'theme-import/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-theme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reassemble and extract theme export
+        shell: bash
+        run: |
+          if [ ! -d theme-import ]; then
+            echo "No theme-import directory found. Nothing to import."
+            exit 0
+          fi
+          cat theme-import/part-* > /tmp/shopify-theme.zip
+          unzip -o /tmp/shopify-theme.zip -d .
+          rm -rf theme-import
+
+      - name: Commit imported Shopify theme
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Import complete Shopify theme export [skip ci]"
+          git push
