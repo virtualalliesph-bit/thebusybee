@@ -15,11 +15,13 @@
         "eyebrow": "About Skin Candy",
         "heading": "Body care made to feel like a treat.",
         "intro": "<p>Skin Candy is a handmade body care brand that creates with purpose. Our products are made with only the finest ingredients, carefully selected to bring out your best self through your skin.</p>",
+        "hero_image": "shopify://shop_images/068db0d5-0c3d-4f9b-8b3f-7470f521859e.png",
         "cta_label": "Shop body care",
         "cta_link": "shopify://collections/all",
         "story_eyebrow": "Our approach",
         "story_heading": "Self-care should feel indulgent, not complicated.",
         "story_text": "<p>We are all about indulgence and self-care. We believe that taking care of your skin should be a treat, not a chore.</p><p>That is why our products are designed to be enjoyable daily treats that enhance the appearance of the skin while supporting the overall well-being of our customers.</p>",
+        "story_image": "shopify://shop_images/8c29078d-a061-4138-bdc8-eb462afb1483.png",
         "values_heading": "What guides everything we make",
         "value_1_heading": "Made with purpose",
         "value_1_text": "<p>Every product begins with intention, from the ingredients we choose to the experience we want it to create.</p>",
@@ -34,10 +36,10 @@
         "closing_text": "<p>Discover handmade body care created for moments of indulgence, confidence, and everyday self-care.</p>",
         "closing_button_label": "Shop all",
         "closing_button_link": "shopify://collections/all",
-        "cream_background": "#FBE6C8",
-        "white_background": "#FFFFFF",
-        "tan_background": "#E5AA6D",
-        "brand_brown": "#BD7E51",
+        "cream_background": "#fbe6c8",
+        "white_background": "#ffffff",
+        "tan_background": "#e5aa6d",
+        "brand_brown": "#bd7e51",
         "text_color": "#000000"
       }
     }

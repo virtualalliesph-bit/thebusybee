@@ -12,11 +12,33 @@
     "main": {
       "type": "product-information",
       "blocks": {
+        "disclosures": {
+          "type": "disclosures",
+          "settings": {
+            "heading": "Disclosures",
+            "heading_preset": "h4",
+            "open_by_default": false,
+            "icon": "caret",
+            "disclosure_heading_preset": "h5",
+            "text_color": "",
+            "dividers": true,
+            "divider_color": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
         "media-gallery": {
           "type": "_product-media-gallery",
           "static": true,
           "settings": {
             "media_presentation": "carousel",
+            "media_columns": "one",
+            "image_gap": 0,
+            "large_first_image": false,
+            "icons_style": "arrow",
             "slideshow_controls_style": "thumbnails",
             "slideshow_mobile_controls_style": "thumbnails",
             "thumbnail_position": "bottom",
@@ -24,10 +46,16 @@
             "thumbnail_radius": 10,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": false,
+            "media_fit": "cover",
             "media_radius": 18,
             "extend_media": false,
             "zoom": true,
-            "hide_variants": true
+            "video_loop": false,
+            "hide_variants": true,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -36,14 +64,26 @@
           "static": true,
           "settings": {
             "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
             "gap": 18,
             "sticky_details_desktop": true,
             "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
             "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
             "padding-block-start": 8,
-            "padding-block-end": 24
+            "padding-block-end": 24,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "header": {
@@ -51,12 +91,39 @@
               "name": "Product header",
               "settings": {
                 "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
                 "gap": 8,
                 "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
                 "height": "fit",
+                "custom_height": 100,
                 "background_media": "none",
-                "border": "none"
+                "background_color": "",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "vendor": {
@@ -65,11 +132,23 @@
                   "settings": {
                     "text": "<p>{{ closest.product.vendor }}</p>",
                     "width": "fit-content",
+                    "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "paragraph",
                     "font": "var(--font-body--family)",
                     "font_size": "0.875rem",
-                    "text_color": "#BD7E51"
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "#bd7e51",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -79,11 +158,23 @@
                   "settings": {
                     "text": "<h1>{{ closest.product.title }}</h1>",
                     "width": "100%",
+                    "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "h2",
                     "font": "var(--font-heading--family)",
                     "font_size": "",
-                    "text_color": "#BD7E51"
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "text_color": "#bd7e51",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
@@ -97,19 +188,44 @@
                     "width": "100%",
                     "alignment": "left",
                     "font": "var(--font-body--family)",
-                    "font_size": "1rem"
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "text_color": "",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
               },
-              "block_order": ["vendor", "title", "price"]
+              "block_order": [
+                "vendor",
+                "title",
+                "price"
+              ]
             },
             "variant": {
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
                 "show_swatches": false,
-                "alignment": "left"
+                "option_label_text_color": "",
+                "variant_style_class": "default",
+                "custom_variant_background": "{{ settings.color_palette.background }}",
+                "custom_variant_text": "{{ settings.color_palette.foreground }}",
+                "custom_variant_border": "{{ settings.color_palette.foreground }}",
+                "selected_variant_style_class": "default",
+                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
+                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
+                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
+                "alignment": "left",
+                "padding-block-start": 0,
+                "padding-block-end": 8,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -117,21 +233,50 @@
               "type": "buy-buttons",
               "settings": {
                 "stacking": true,
+                "text_color": "",
                 "show_pickup_availability": false,
-                "gift_card_form": true
+                "gift_card_form": true,
+                "recipient_button_style": "default",
+                "recipient_button_background": "{{ settings.color_palette.background }}",
+                "recipient_button_text": "{{ settings.color_palette.foreground }}",
+                "recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_style": "default",
+                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
+                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
+                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
+                "input_style": "default",
+                "input_background_color": "{{ settings.color_palette.background }}",
+                "input_text_color": "{{ settings.color_palette.foreground }}",
+                "input_border_color": "{{ settings.color_palette.foreground }}",
+                "border_width": 1,
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "quantity": {
                   "type": "quantity",
                   "static": true,
-                  "settings": {},
+                  "settings": {
+                    "input_style": "default",
+                    "input_background_color": "{{ settings.color_palette.background }}",
+                    "input_text_color": "{{ settings.color_palette.foreground }}",
+                    "input_border_color": "{{ settings.color_palette.foreground }}",
+                    "border_width": 1,
+                    "border_radius": 0
+                  },
                   "blocks": {}
                 },
                 "add-to-cart": {
                   "type": "add-to-cart",
                   "static": true,
                   "settings": {
-                    "style_class": "button"
+                    "style_class": "button",
+                    "custom_button_background": "{{ settings.color_palette.foreground }}",
+                    "custom_button_text": "{{ settings.color_palette.background }}",
+                    "custom_button_border": "{{ settings.color_palette.background }}"
                   },
                   "blocks": {}
                 },
@@ -150,27 +295,38 @@
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "",
-                "text_color": "#000000"
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
-          "block_order": ["header", "variant", "buy", "description"]
-        },
-        "disclosures": {
-          "type": "disclosures",
-          "settings": {
-            "padding-block-start": 0,
-            "padding-block-end": 0
-          },
-          "blocks": {}
+          "block_order": [
+            "header",
+            "variant",
+            "buy",
+            "description"
+          ]
         }
       },
-      "block_order": ["disclosures"],
+      "block_order": [
+        "disclosures"
+      ],
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
@@ -178,7 +334,7 @@
         "limit_details_width": false,
         "gap": 40,
         "enable_sticky_add_to_cart": true,
-        "background_color": "#FFFFFF",
+        "background_color": "#ffffff",
         "padding-block-start": 36,
         "padding-block-end": 36
       }
@@ -186,10 +342,20 @@
     "scrub_details": {
       "type": "sugar-scrub-details",
       "settings": {
-        "section_background": "#FBE6C8",
-        "card_background": "#FFFFFF",
+        "heading": "Everything to know before you glow",
+        "intro": "<p>A simple shower-time guide for getting the most from your sugar scrub while keeping the routine gentle and easy.</p>",
+        "highlights_heading": "Highlights",
+        "highlights_text": "<p>A whipped sugar scrub made for an easy exfoliation ritual. Massage over damp skin to help buff away surface buildup and leave skin feeling freshly polished.</p>",
+        "scent_heading": "Scent",
+        "scent_text": "<p>Each scrub has its own fragrance profile, from fresh and fruity to warm and sweet. Refer to the product name and selected option for the exact scent.</p>",
+        "details_heading": "Details",
+        "details_text": "<p>Scoop a small amount onto damp skin and massage gently in circular motions, focusing on rough areas such as elbows, knees, and legs. Rinse well. Start with 2–3 uses per week and adjust based on how your skin feels. Avoid broken or irritated skin.</p>",
+        "ingredients_heading": "Ingredients",
+        "ingredients_text": "<p>Ingredient lists can vary by scent and formula. Please check the product-specific ingredient information or packaging before use, especially if you have known sensitivities.</p>",
+        "section_background": "#fbe6c8",
+        "card_background": "#ffffff",
         "text_color": "#000000",
-        "border_color": "#D8CA9A"
+        "border_color": "#d8ca9a"
       }
     },
     "recommendations": {
@@ -201,11 +367,23 @@
           "settings": {
             "text": "<h2>You may also like</h2>",
             "width": "fit-content",
+            "max_width": "normal",
             "alignment": "left",
             "type_preset": "h4",
             "font": "var(--font-heading--family)",
             "font_size": "",
-            "text_color": "#BD7E51"
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#bd7e51",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -215,9 +393,16 @@
           "static": true,
           "settings": {
             "product_card_gap": 8,
+            "background_color": "",
             "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
             "border_radius": 14,
-            "padding-block-end": 8
+            "padding-block-start": 0,
+            "padding-block-end": 8,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
             "gallery": {
@@ -226,7 +411,14 @@
               "settings": {
                 "image_ratio": "adapt",
                 "border": "none",
-                "border_radius": 14
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 14,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -235,10 +427,23 @@
               "name": "Product title",
               "settings": {
                 "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "paragraph",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem"
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
@@ -252,15 +457,29 @@
                 "width": "100%",
                 "alignment": "left",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem"
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "text_color": "",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             }
           },
-          "block_order": ["gallery", "title", "price"]
+          "block_order": [
+            "gallery",
+            "title",
+            "price"
+          ]
         }
       },
-      "block_order": ["heading"],
+      "block_order": [
+        "heading"
+      ],
       "name": "You may also like",
       "settings": {
         "product": "{{ closest.product }}",
@@ -276,6 +495,7 @@
         "icons_shape": "none",
         "section_width": "page-width",
         "gap": 28,
+        "background_color": "",
         "padding-block-start": 44,
         "padding-block-end": 52
       }
@@ -283,13 +503,35 @@
     "scrub_story": {
       "type": "sugar-scrub-story",
       "settings": {
-        "page_background": "#FFFFFF",
-        "accent_background": "#FEE693",
-        "card_background": "#FBE6C8",
-        "text_color": "#000000",
+        "review_quote": "I've tried the oatmeal scrub — smelled so good and I didn't want to get out of the shower!",
+        "review_author": "— @iamsheilasnow",
+        "step_1_title": "Exfoliate gently",
+        "step_1_text": "<p>Massage onto damp skin using light circular motions. Let the sugar do the work rather than pressing hard.</p>",
+        "step_2_title": "Focus on rough spots",
+        "step_2_text": "<p>Spend a little extra time on elbows, knees, legs, and other areas that tend to feel dry or textured.</p>",
+        "step_3_title": "Rinse clean",
+        "step_3_text": "<p>Rinse thoroughly with warm water and pat your skin dry instead of rubbing.</p>",
+        "step_4_title": "Follow with moisture",
+        "step_4_text": "<p>Finish with your favorite body moisturizer or oil while skin still feels slightly damp.</p>",
+        "ritual_heading": "Build your body-care ritual.",
+        "ritual_text": "<p>A sugar scrub works best as one step in a simple routine: soften with water, exfoliate gently, rinse, then moisturize.</p>",
+        "card_1_image": "shopify://shop_images/cb9fdb0a-3648-4f94-b580-1960c244f4b5.png",
+        "card_1_heading": "Start with damp skin",
+        "card_1_text": "<p>Warm water helps prep the skin so the scrub can glide more comfortably. Scoop a small amount and work in gentle circles.</p>",
+        "card_1_button_label": "Shop sugar scrubs",
         "card_1_button_link": "shopify://collections/whipped-sugar-scrub",
+        "card_2_heading": "Buff where you need it",
+        "card_2_text": "<p>Give extra attention to rough-feeling areas, but keep the pressure light. More pressure does not mean better exfoliation.</p>",
+        "card_2_button_label": "Shop sugar scrubs",
         "card_2_button_link": "shopify://collections/whipped-sugar-scrub",
-        "card_3_button_link": "shopify://collections/whipped-sugar-scrub"
+        "card_3_heading": "Finish with moisture",
+        "card_3_text": "<p>After rinsing, pat dry and follow with a body moisturizer or oil to complete the routine and keep skin feeling comfortable.</p>",
+        "card_3_button_label": "Shop sugar scrubs",
+        "card_3_button_link": "shopify://collections/whipped-sugar-scrub",
+        "page_background": "#ffffff",
+        "accent_background": "#fee693",
+        "card_background": "#fbe6c8",
+        "text_color": "#000000"
       }
     },
     "newsletter": {
@@ -301,11 +543,23 @@
           "settings": {
             "text": "<h2>Subscribe to our emails</h2>",
             "width": "100%",
+            "max_width": "normal",
             "alignment": "center",
             "type_preset": "h3",
             "font": "var(--font-heading--family)",
             "font_size": "",
-            "text_color": "#BD7E51"
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#bd7e51",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -315,11 +569,23 @@
           "settings": {
             "text": "<p>Be the first to know about new collections and exclusive offers.</p>",
             "width": "100%",
+            "max_width": "normal",
             "alignment": "center",
             "type_preset": "paragraph",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
-            "text_color": "#000000"
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#000000",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -328,30 +594,76 @@
           "name": "Email signup",
           "settings": {
             "width": "custom",
-            "custom_width": 50
+            "custom_width": 50,
+            "heading": "",
+            "heading_text_color": "",
+            "heading_preset": "h3",
+            "border_style": "all",
+            "input_style": "default",
+            "border_width": 1,
+            "border_radius": 100,
+            "input_background_color": "",
+            "input_text_color": "",
+            "input_border_color": "",
+            "input_type_preset": "paragraph",
+            "style_class": "button",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
+            "display_type": "text",
+            "label": "Sign up",
+            "integrated_button": false,
+            "button_type_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
       },
-      "block_order": ["heading", "copy", "form"],
+      "block_order": [
+        "heading",
+        "copy",
+        "form"
+      ],
       "name": "Subscribe to our emails",
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
         "horizontal_alignment": "center",
         "vertical_alignment": "center",
+        "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
         "section_height": "small",
+        "section_height_custom": 50,
         "background_media": "none",
-        "background_color": "#FBE6C8",
+        "background_color": "#fbe6c8",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
         "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
         "padding-block-start": 56,
         "padding-block-end": 56
       }
     }
   },
-  "order": ["main", "scrub_details", "recommendations", "scrub_story", "newsletter"]
+  "order": [
+    "main",
+    "scrub_details",
+    "recommendations",
+    "scrub_story",
+    "newsletter"
+  ]
 }
