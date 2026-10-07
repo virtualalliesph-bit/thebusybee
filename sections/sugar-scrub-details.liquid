@@ -1,0 +1,237 @@
+<section class="busybee-scrub-details" style="--bb-section-bg: {{ section.settings.section_background }}; --bb-card-bg: {{ section.settings.card_background }}; --bb-text: {{ section.settings.text_color }}; --bb-border: {{ section.settings.border_color }};">
+  <div class="busybee-scrub-details__inner">
+    <div class="busybee-scrub-details__card">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.intro != blank %}
+        <div class="busybee-scrub-details__intro">{{ section.settings.intro }}</div>
+      {% endif %}
+
+      <div class="busybee-scrub-details__rows">
+        <details open>
+          <summary>{{ section.settings.highlights_heading | escape }}<span aria-hidden="true">+</span></summary>
+          <div class="busybee-scrub-details__copy">{{ section.settings.highlights_text }}</div>
+        </details>
+        <details>
+          <summary>{{ section.settings.scent_heading | escape }}<span aria-hidden="true">+</span></summary>
+          <div class="busybee-scrub-details__copy">{{ section.settings.scent_text }}</div>
+        </details>
+        <details>
+          <summary>{{ section.settings.details_heading | escape }}<span aria-hidden="true">+</span></summary>
+          <div class="busybee-scrub-details__copy">{{ section.settings.details_text }}</div>
+        </details>
+        <details>
+          <summary>{{ section.settings.ingredients_heading | escape }}<span aria-hidden="true">+</span></summary>
+          <div class="busybee-scrub-details__copy">{{ section.settings.ingredients_text }}</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .busybee-scrub-details {
+    background: var(--bb-section-bg);
+    color: var(--bb-text);
+    padding: 24px 0 52px;
+  }
+
+  .busybee-scrub-details__inner {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .busybee-scrub-details__card {
+    background: var(--bb-card-bg);
+    border-radius: 20px;
+    padding: clamp(28px, 5vw, 52px);
+  }
+
+  .busybee-scrub-details h2 {
+    margin: 0 0 12px;
+    text-align: center;
+    font-family: var(--font-heading--family);
+  }
+
+  .busybee-scrub-details__intro {
+    max-width: 760px;
+    margin: 0 auto 22px;
+    text-align: center;
+  }
+
+  .busybee-scrub-details__intro p,
+  .busybee-scrub-details__copy p {
+    margin: 0;
+  }
+
+  .busybee-scrub-details__rows {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .busybee-scrub-details details {
+    border-bottom: 1px solid var(--bb-border);
+  }
+
+  .busybee-scrub-details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    padding: 18px 0;
+    font-family: var(--font-heading--family);
+    font-weight: var(--font-heading--weight);
+    list-style: none;
+  }
+
+  .busybee-scrub-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .busybee-scrub-details summary span {
+    font-family: var(--font-body--family);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 180ms ease;
+  }
+
+  .busybee-scrub-details details[open] summary span {
+    transform: rotate(45deg);
+  }
+
+  .busybee-scrub-details__copy {
+    padding: 0 34px 20px 0;
+    max-width: 760px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .busybee-scrub-details__inner {
+      width: min(100% - 24px, 1180px);
+    }
+
+    .busybee-scrub-details__card {
+      border-radius: 14px;
+      padding: 26px 22px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Sugar scrub details",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything to know before you glow"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction",
+      "default": "<p>A simple shower-time guide for getting the most from your sugar scrub while keeping the routine gentle and easy.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Highlights"
+    },
+    {
+      "type": "text",
+      "id": "highlights_heading",
+      "label": "Heading",
+      "default": "Highlights"
+    },
+    {
+      "type": "richtext",
+      "id": "highlights_text",
+      "label": "Text",
+      "default": "<p>A whipped sugar scrub made for an easy exfoliation ritual. Massage over damp skin to help buff away surface buildup and leave skin feeling freshly polished.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Scent"
+    },
+    {
+      "type": "text",
+      "id": "scent_heading",
+      "label": "Heading",
+      "default": "Scent"
+    },
+    {
+      "type": "richtext",
+      "id": "scent_text",
+      "label": "Text",
+      "default": "<p>Each scrub has its own fragrance profile, from fresh and fruity to warm and sweet. Refer to the product name and selected option for the exact scent.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Details"
+    },
+    {
+      "type": "text",
+      "id": "details_heading",
+      "label": "Heading",
+      "default": "Details"
+    },
+    {
+      "type": "richtext",
+      "id": "details_text",
+      "label": "Text",
+      "default": "<p>Scoop a small amount onto damp skin and massage gently in circular motions, focusing on rough areas such as elbows, knees, and legs. Rinse well. Start with 2–3 uses per week and adjust based on how your skin feels. Avoid broken or irritated skin.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "ingredients_heading",
+      "label": "Heading",
+      "default": "Ingredients"
+    },
+    {
+      "type": "richtext",
+      "id": "ingredients_text",
+      "label": "Text",
+      "default": "<p>Ingredient lists can vary by scent and formula. Please check the product-specific ingredient information or packaging before use, especially if you have known sensitivities.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_background",
+      "label": "Section background",
+      "default": "#FBE6C8"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFDF8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Dividers",
+      "default": "#D8CA9A"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sugar scrub details"
+    }
+  ]
+}
+{% endschema %}
