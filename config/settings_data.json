@@ -94,7 +94,7 @@
     "content_for_index": [],
     "color_palette": {
       "background": "#fbe6c8",
-      "foreground": "#FFFFFF",
+      "foreground": "#000000",
       "color1": "#bd7e51",
       "color2": "#fee693",
       "color3": "#d8ca9a"
