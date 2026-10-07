@@ -1,0 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_skin_candy": {
+      "type": "about-skin-candy",
+      "settings": {
+        "eyebrow": "About Skin Candy",
+        "heading": "Body care made to feel like a treat.",
+        "intro": "<p>Skin Candy is a handmade body care brand that creates with purpose. Our products are made with only the finest ingredients, carefully selected to bring out your best self through your skin.</p>",
+        "cta_label": "Shop body care",
+        "cta_link": "shopify://collections/all",
+        "story_eyebrow": "Our approach",
+        "story_heading": "Self-care should feel indulgent, not complicated.",
+        "story_text": "<p>We are all about indulgence and self-care. We believe that taking care of your skin should be a treat, not a chore.</p><p>That is why our products are designed to be enjoyable daily treats that enhance the appearance of the skin while supporting the overall well-being of our customers.</p>",
+        "values_heading": "What guides everything we make",
+        "value_1_heading": "Made with purpose",
+        "value_1_text": "<p>Every product begins with intention, from the ingredients we choose to the experience we want it to create.</p>",
+        "value_2_heading": "Ingredients chosen with care",
+        "value_2_text": "<p>We select quality ingredients thoughtfully, with the goal of helping your skin look and feel its best.</p>",
+        "value_3_heading": "Self-care you look forward to",
+        "value_3_text": "<p>Your routine should be something you enjoy. We create body care that turns everyday moments into feel-good rituals.</p>",
+        "manifesto_eyebrow": "More than skincare",
+        "manifesto_heading": "A little more care for the skin you are in.",
+        "manifesto_text": "<p>We are committed to promoting self-care and self-love, and we believe our products can play an important role in that journey. Every jar is an invitation to slow down, indulge, and make caring for yourself part of the everyday.</p>",
+        "closing_heading": "Make your routine the best part of your day.",
+        "closing_text": "<p>Discover handmade body care created for moments of indulgence, confidence, and everyday self-care.</p>",
+        "closing_button_label": "Shop all",
+        "closing_button_link": "shopify://collections/all",
+        "cream_background": "#FBE6C8",
+        "white_background": "#FFFFFF",
+        "tan_background": "#E5AA6D",
+        "brand_brown": "#BD7E51",
+        "text_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "about_skin_candy"
+  ]
+}
