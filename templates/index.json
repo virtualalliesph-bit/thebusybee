@@ -12,31 +12,6 @@
     "slideshow_8gnwtf": {
       "type": "slideshow",
       "blocks": {
-        "slide_RRHfBy": {
-          "type": "_slide",
-          "settings": {
-            "media_type_1": "image",
-            "image_1": "shopify://shop_images/2bfa9b6a-e997-4eae-b373-3df204438ea7.png",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "background_color": "",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 48,
-            "padding-inline-end": 48
-          },
-          "blocks": {}
-        },
         "slide_LckJeq": {
           "type": "_slide",
           "settings": {
@@ -61,11 +36,36 @@
             "padding-inline-end": 48
           },
           "blocks": {}
+        },
+        "slide_RRHfBy": {
+          "type": "_slide",
+          "settings": {
+            "media_type_1": "image",
+            "image_1": "shopify://shop_images/2bfa9b6a-e997-4eae-b373-3df204438ea7.png",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "background_color": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "slide_RRHfBy",
-        "slide_LckJeq"
+        "slide_LckJeq",
+        "slide_RRHfBy"
       ],
       "name": "t:names.slideshow_full_frame",
       "settings": {
