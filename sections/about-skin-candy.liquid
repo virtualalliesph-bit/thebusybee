@@ -1,0 +1,518 @@
+<section
+  class="busybee-about"
+  style="
+    --about-cream: {{ section.settings.cream_background }};
+    --about-white: {{ section.settings.white_background }};
+    --about-tan: {{ section.settings.tan_background }};
+    --about-brown: {{ section.settings.brand_brown }};
+    --about-text: {{ section.settings.text_color }};
+  "
+>
+  <div class="busybee-about__hero">
+    <div class="busybee-about__wrap busybee-about__hero-grid">
+      <div class="busybee-about__hero-copy">
+        {% if section.settings.eyebrow != blank %}
+          <p class="busybee-about__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h1>{{ section.settings.heading | escape }}</h1>
+        {% endif %}
+        {% if section.settings.intro != blank %}
+          <div class="busybee-about__rte busybee-about__lead">{{ section.settings.intro }}</div>
+        {% endif %}
+        {% if section.settings.cta_label != blank and section.settings.cta_link != blank %}
+          <a class="button busybee-about__button" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label | escape }}</a>
+        {% endif %}
+      </div>
+
+      <div class="busybee-about__media busybee-about__media--hero">
+        {% if section.settings.hero_image != blank %}
+          {{ section.settings.hero_image | image_url: width: 1600 | image_tag: loading: 'eager', widths: '480, 720, 960, 1200, 1600', sizes: '(min-width: 750px) 48vw, 100vw', alt: section.settings.heading }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'busybee-about__placeholder' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="busybee-about__story">
+    <div class="busybee-about__wrap busybee-about__story-grid">
+      <div class="busybee-about__media">
+        {% if section.settings.story_image != blank %}
+          {{ section.settings.story_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1200, 1400', sizes: '(min-width: 750px) 44vw, 100vw', alt: section.settings.story_heading }}
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'busybee-about__placeholder' }}
+        {% endif %}
+      </div>
+
+      <div class="busybee-about__story-copy">
+        {% if section.settings.story_eyebrow != blank %}
+          <p class="busybee-about__eyebrow">{{ section.settings.story_eyebrow | escape }}</p>
+        {% endif %}
+        {% if section.settings.story_heading != blank %}
+          <h2>{{ section.settings.story_heading | escape }}</h2>
+        {% endif %}
+        {% if section.settings.story_text != blank %}
+          <div class="busybee-about__rte">{{ section.settings.story_text }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="busybee-about__values">
+    <div class="busybee-about__wrap">
+      {% if section.settings.values_heading != blank %}
+        <h2 class="busybee-about__center-heading">{{ section.settings.values_heading | escape }}</h2>
+      {% endif %}
+      <div class="busybee-about__values-grid">
+        <article class="busybee-about__value-card">
+          <span class="busybee-about__number">01</span>
+          <h3>{{ section.settings.value_1_heading | escape }}</h3>
+          <div class="busybee-about__rte">{{ section.settings.value_1_text }}</div>
+        </article>
+        <article class="busybee-about__value-card">
+          <span class="busybee-about__number">02</span>
+          <h3>{{ section.settings.value_2_heading | escape }}</h3>
+          <div class="busybee-about__rte">{{ section.settings.value_2_text }}</div>
+        </article>
+        <article class="busybee-about__value-card">
+          <span class="busybee-about__number">03</span>
+          <h3>{{ section.settings.value_3_heading | escape }}</h3>
+          <div class="busybee-about__rte">{{ section.settings.value_3_text }}</div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="busybee-about__manifesto">
+    <div class="busybee-about__narrow">
+      {% if section.settings.manifesto_eyebrow != blank %}
+        <p class="busybee-about__eyebrow">{{ section.settings.manifesto_eyebrow | escape }}</p>
+      {% endif %}
+      {% if section.settings.manifesto_heading != blank %}
+        <h2>{{ section.settings.manifesto_heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.manifesto_text != blank %}
+        <div class="busybee-about__rte busybee-about__manifesto-copy">{{ section.settings.manifesto_text }}</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="busybee-about__cta">
+    <div class="busybee-about__narrow">
+      {% if section.settings.closing_heading != blank %}
+        <h2>{{ section.settings.closing_heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.closing_text != blank %}
+        <div class="busybee-about__rte">{{ section.settings.closing_text }}</div>
+      {% endif %}
+      {% if section.settings.closing_button_label != blank and section.settings.closing_button_link != blank %}
+        <a class="button busybee-about__button" href="{{ section.settings.closing_button_link }}">{{ section.settings.closing_button_label | escape }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .busybee-about {
+    color: var(--about-text);
+  }
+
+  .busybee-about__wrap {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .busybee-about__narrow {
+    width: min(760px, calc(100% - 40px));
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .busybee-about__hero {
+    background: var(--about-cream);
+    padding: clamp(56px, 8vw, 104px) 0;
+  }
+
+  .busybee-about__hero-grid,
+  .busybee-about__story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(36px, 6vw, 80px);
+  }
+
+  .busybee-about__eyebrow {
+    margin: 0 0 14px;
+    color: var(--about-brown);
+    font-family: var(--font-body--family);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .busybee-about h1,
+  .busybee-about h2,
+  .busybee-about h3 {
+    font-family: var(--font-heading--family);
+    color: var(--about-brown);
+  }
+
+  .busybee-about h1 {
+    margin: 0 0 22px;
+    font-size: clamp(2.8rem, 6vw, 5.2rem);
+    line-height: 0.98;
+  }
+
+  .busybee-about h2 {
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+  }
+
+  .busybee-about h3 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+  }
+
+  .busybee-about__rte {
+    font-family: var(--font-body--family);
+  }
+
+  .busybee-about__rte p {
+    margin: 0 0 16px;
+  }
+
+  .busybee-about__rte p:last-child {
+    margin-bottom: 0;
+  }
+
+  .busybee-about__lead {
+    max-width: 590px;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+
+  .busybee-about__media {
+    overflow: hidden;
+    border-radius: 24px;
+    min-height: 420px;
+    background: var(--about-white);
+  }
+
+  .busybee-about__media img,
+  .busybee-about__placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .busybee-about__media--hero {
+    min-height: 520px;
+  }
+
+  .busybee-about__media--hero img,
+  .busybee-about__media--hero .busybee-about__placeholder {
+    min-height: 520px;
+  }
+
+  .busybee-about__button {
+    margin-top: 26px;
+    background: var(--about-brown);
+    color: #fff;
+    border-color: var(--about-brown);
+  }
+
+  .busybee-about__story {
+    background: var(--about-white);
+    padding: clamp(68px, 9vw, 112px) 0;
+  }
+
+  .busybee-about__story-copy {
+    max-width: 560px;
+  }
+
+  .busybee-about__values {
+    background: var(--about-tan);
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+
+  .busybee-about__center-heading {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto !important;
+    margin-bottom: 40px !important;
+  }
+
+  .busybee-about__values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .busybee-about__value-card {
+    background: var(--about-white);
+    border-radius: 18px;
+    padding: 30px;
+    min-height: 240px;
+  }
+
+  .busybee-about__number {
+    display: inline-block;
+    margin-bottom: 28px;
+    color: var(--about-brown);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  .busybee-about__manifesto {
+    background: var(--about-white);
+    padding: clamp(72px, 10vw, 120px) 0;
+  }
+
+  .busybee-about__manifesto-copy {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .busybee-about__cta {
+    background: var(--about-cream);
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .busybee-about__hero-grid,
+    .busybee-about__story-grid,
+    .busybee-about__values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .busybee-about__hero-copy {
+      text-align: center;
+    }
+
+    .busybee-about__lead,
+    .busybee-about__story-copy {
+      margin-inline: auto;
+    }
+
+    .busybee-about__story-copy {
+      text-align: center;
+    }
+
+    .busybee-about__media,
+    .busybee-about__media img,
+    .busybee-about__placeholder,
+    .busybee-about__media--hero,
+    .busybee-about__media--hero img,
+    .busybee-about__media--hero .busybee-about__placeholder {
+      min-height: 340px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "About Skin Candy",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Hero eyebrow",
+      "default": "About Skin Candy"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Hero heading",
+      "default": "Body care made to feel like a treat."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Hero text",
+      "default": "<p>Skin Candy is a handmade body care brand that creates with purpose. Our products are made with only the finest ingredients, carefully selected to bring out your best self through your skin.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Hero button label",
+      "default": "Shop body care"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Hero button link"
+    },
+    {
+      "type": "header",
+      "content": "Our story"
+    },
+    {
+      "type": "text",
+      "id": "story_eyebrow",
+      "label": "Story eyebrow",
+      "default": "Our approach"
+    },
+    {
+      "type": "text",
+      "id": "story_heading",
+      "label": "Story heading",
+      "default": "Self-care should feel indulgent, not complicated."
+    },
+    {
+      "type": "richtext",
+      "id": "story_text",
+      "label": "Story text",
+      "default": "<p>We are all about indulgence and self-care. We believe that taking care of your skin should be a treat, not a chore.</p><p>That is why our products are designed to be enjoyable daily treats that enhance the appearance of the skin while supporting the overall well-being of our customers.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "story_image",
+      "label": "Story image"
+    },
+    {
+      "type": "header",
+      "content": "Values"
+    },
+    {
+      "type": "text",
+      "id": "values_heading",
+      "label": "Values heading",
+      "default": "What guides everything we make"
+    },
+    {
+      "type": "text",
+      "id": "value_1_heading",
+      "label": "Value 1 heading",
+      "default": "Made with purpose"
+    },
+    {
+      "type": "richtext",
+      "id": "value_1_text",
+      "label": "Value 1 text",
+      "default": "<p>Every product begins with intention, from the ingredients we choose to the experience we want it to create.</p>"
+    },
+    {
+      "type": "text",
+      "id": "value_2_heading",
+      "label": "Value 2 heading",
+      "default": "Ingredients chosen with care"
+    },
+    {
+      "type": "richtext",
+      "id": "value_2_text",
+      "label": "Value 2 text",
+      "default": "<p>We select quality ingredients thoughtfully, with the goal of helping your skin look and feel its best.</p>"
+    },
+    {
+      "type": "text",
+      "id": "value_3_heading",
+      "label": "Value 3 heading",
+      "default": "Self-care you look forward to"
+    },
+    {
+      "type": "richtext",
+      "id": "value_3_text",
+      "label": "Value 3 text",
+      "default": "<p>Your routine should be something you enjoy. We create body care that turns everyday moments into feel-good rituals.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Mission statement"
+    },
+    {
+      "type": "text",
+      "id": "manifesto_eyebrow",
+      "label": "Mission eyebrow",
+      "default": "More than skincare"
+    },
+    {
+      "type": "text",
+      "id": "manifesto_heading",
+      "label": "Mission heading",
+      "default": "A little more care for the skin you are in."
+    },
+    {
+      "type": "richtext",
+      "id": "manifesto_text",
+      "label": "Mission text",
+      "default": "<p>We are committed to promoting self-care and self-love, and we believe our products can play an important role in that journey. Every jar is an invitation to slow down, indulge, and make caring for yourself part of the everyday.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Closing call to action"
+    },
+    {
+      "type": "text",
+      "id": "closing_heading",
+      "label": "Closing heading",
+      "default": "Make your routine the best part of your day."
+    },
+    {
+      "type": "richtext",
+      "id": "closing_text",
+      "label": "Closing text",
+      "default": "<p>Discover handmade body care created for moments of indulgence, confidence, and everyday self-care.</p>"
+    },
+    {
+      "type": "text",
+      "id": "closing_button_label",
+      "label": "Closing button label",
+      "default": "Shop all"
+    },
+    {
+      "type": "url",
+      "id": "closing_button_link",
+      "label": "Closing button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "cream_background",
+      "label": "Cream background",
+      "default": "#FBE6C8"
+    },
+    {
+      "type": "color",
+      "id": "white_background",
+      "label": "White background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tan_background",
+      "label": "Tan background",
+      "default": "#E5AA6D"
+    },
+    {
+      "type": "color",
+      "id": "brand_brown",
+      "label": "Brand brown",
+      "default": "#BD7E51"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body text",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Skin Candy"
+    }
+  ]
+}
+{% endschema %}
