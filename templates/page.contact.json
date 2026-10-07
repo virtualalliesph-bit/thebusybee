@@ -9,37 +9,455 @@
  */
 {
   "sections": {
-    "contact": {
-      "type": "contact-skin-candy",
+    "contact_hero": {
+      "type": "section",
+      "blocks": {
+        "eyebrow": {
+          "type": "text",
+          "name": "Eyebrow",
+          "settings": {
+            "text": "<p>CONTACT US</p>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "0.875rem",
+            "line_height": "normal",
+            "letter_spacing": "loose",
+            "case": "uppercase",
+            "wrap": "pretty",
+            "text_color": "#BD7E51",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "heading": {
+          "type": "text",
+          "name": "Heading",
+          "settings": {
+            "text": "<h1>We'd love to hear from you.</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h2",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#BD7E51",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "intro": {
+          "type": "text",
+          "name": "Intro",
+          "settings": {
+            "text": "<p>Questions about an order, a product, or your body-care routine? Send us a message and we'll be happy to help.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#000000",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["eyebrow", "heading", "intro"],
+      "name": "Contact hero",
       "settings": {
-        "eyebrow": "Contact us",
-        "heading": "We'd love to hear from you.",
-        "intro": "<p>Questions about an order, a product, or your body-care routine? Send us a message and we'll be happy to help.</p>",
-        "info_heading": "How can we help?",
-        "info_text": "<p>Use the form for general questions, product help, order support, or partnership inquiries. If you're contacting us about an order, including your order number helps us assist you faster.</p>",
-        "help_1_heading": "Order support",
-        "help_1_text": "<p>Have a question about an existing order, shipping, or delivery? Include your order number in your message.</p>",
-        "help_2_heading": "Product questions",
-        "help_2_text": "<p>Need help choosing a sugar scrub or want to know more about a product? Tell us what you're looking for.</p>",
-        "help_3_heading": "Wholesale & collaborations",
-        "help_3_text": "<p>Interested in carrying our products or working together? Select the collaboration option and share a few details.</p>",
-        "form_heading": "Send us a message",
-        "form_text": "<p>Fill out the form below and our team will get back to you as soon as we can.</p>",
-        "button_label": "Send message",
-        "success_message": "Thanks for reaching out. Your message has been sent.",
-        "closing_eyebrow": "A little care goes a long way",
-        "closing_heading": "Your self-care questions are always welcome.",
-        "closing_text": "<p>Whether you're building a new routine or simply treating your skin to something special, we're here to make the experience feel easy, enjoyable, and intentional.</p>",
-        "cream_background": "#FBE6C8",
-        "white_background": "#FFFFFF",
-        "tan_background": "#E5AA6D",
-        "brand_brown": "#BD7E51",
-        "border_color": "#D8CA9A",
-        "text_color": "#000000"
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 14,
+        "section_width": "page-width",
+        "section_height": "",
+        "background_media": "none",
+        "background_color": "#FBE6C8",
+        "border": "none",
+        "padding-block-start": 64,
+        "padding-block-end": 64
+      }
+    },
+    "contact_main": {
+      "type": "section",
+      "blocks": {
+        "info": {
+          "type": "group",
+          "name": "Contact information",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 20,
+            "width": "fill",
+            "width_mobile": "fill",
+            "height": "fit",
+            "background_media": "none",
+            "background_color": "#FFFFFF",
+            "border": "none",
+            "border_radius": 0,
+            "padding-block-start": 12,
+            "padding-block-end": 12,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "info_heading": {
+              "type": "text",
+              "name": "Heading",
+              "settings": {
+                "text": "<h2>How can we help?</h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-heading--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#BD7E51",
+                "background": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "info_copy": {
+              "type": "text",
+              "name": "Intro",
+              "settings": {
+                "text": "<p>Use the form for general questions, product help, order support, or partnership inquiries. If you're contacting us about an order, include your order number in your message so we can assist you faster.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "order_support": {
+              "type": "text",
+              "name": "Order support",
+              "settings": {
+                "text": "<h3>Order support</h3><p>Have a question about an existing order, shipping, or delivery? Include your order number in your message.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "padding-block-start": 14,
+                "padding-block-end": 14,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "product_questions": {
+              "type": "text",
+              "name": "Product questions",
+              "settings": {
+                "text": "<h3>Product questions</h3><p>Need help choosing a sugar scrub or want to know more about a product? Tell us what you're looking for.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "padding-block-start": 14,
+                "padding-block-end": 14,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "collaborations": {
+              "type": "text",
+              "name": "Collaborations",
+              "settings": {
+                "text": "<h3>Wholesale & collaborations</h3><p>Interested in carrying our products or working together? Share a few details and we'll get back to you.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "padding-block-start": 14,
+                "padding-block-end": 14,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": ["info_heading", "info_copy", "order_support", "product_questions", "collaborations"]
+        },
+        "form_card": {
+          "type": "group",
+          "name": "Contact form card",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 18,
+            "width": "fill",
+            "width_mobile": "fill",
+            "height": "fit",
+            "background_media": "none",
+            "background_color": "#FBE6C8",
+            "border": "none",
+            "border_radius": 20,
+            "padding-block-start": 36,
+            "padding-block-end": 36,
+            "padding-inline-start": 36,
+            "padding-inline-end": 36
+          },
+          "blocks": {
+            "form_heading": {
+              "type": "text",
+              "name": "Form heading",
+              "settings": {
+                "text": "<h2>Send us a message</h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-heading--family)",
+                "font_size": "",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#BD7E51",
+                "background": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "form_intro": {
+              "type": "text",
+              "name": "Form intro",
+              "settings": {
+                "text": "<p>Fill out the form below and our team will get back to you as soon as we can.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "paragraph",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "#000000",
+                "background": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "contact_form": {
+              "type": "contact-form",
+              "name": "Contact form",
+              "settings": {
+                "width": "custom",
+                "custom_width": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 100,
+                "background_color": "",
+                "input_style": "custom",
+                "input_background_color": "#FFFFFF",
+                "input_text_color": "#000000",
+                "input_border_color": "#D8CA9A",
+                "border_width": 1,
+                "border_radius": 12,
+                "padding-block-start": 4,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "submit-button": {
+                  "type": "contact-form-submit-button",
+                  "static": true,
+                  "settings": {
+                    "label": "Send message",
+                    "style_class": "button",
+                    "width": "custom",
+                    "custom_width": 100,
+                    "width_mobile": "custom",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            }
+          },
+          "block_order": ["form_heading", "form_intro", "contact_form"]
+        }
+      },
+      "block_order": ["info", "form_card"],
+      "name": "Contact details",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 56,
+        "section_width": "page-width",
+        "section_height": "",
+        "background_media": "none",
+        "background_color": "#FFFFFF",
+        "border": "none",
+        "padding-block-start": 64,
+        "padding-block-end": 72
+      }
+    },
+    "contact_closing": {
+      "type": "section",
+      "blocks": {
+        "closing_heading": {
+          "type": "text",
+          "name": "Closing heading",
+          "settings": {
+            "text": "<h2>Your self-care questions are always welcome.</h2>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "center",
+            "type_preset": "h3",
+            "font": "var(--font-heading--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#000000",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "closing_text": {
+          "type": "text",
+          "name": "Closing text",
+          "settings": {
+            "text": "<p>Whether you're building a new routine or simply treating your skin to something special, we're here to make the experience feel easy, enjoyable, and intentional.</p>",
+            "width": "100%",
+            "max_width": "narrow",
+            "alignment": "center",
+            "type_preset": "paragraph",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "text_color": "#000000",
+            "background": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": ["closing_heading", "closing_text"],
+      "name": "Contact closing",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "center",
+        "vertical_alignment": "center",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 14,
+        "section_width": "page-width",
+        "section_height": "",
+        "background_media": "none",
+        "background_color": "#E5AA6D",
+        "border": "none",
+        "padding-block-start": 52,
+        "padding-block-end": 52
       }
     }
   },
-  "order": [
-    "contact"
-  ]
+  "order": ["contact_hero", "contact_main", "contact_closing"]
 }
