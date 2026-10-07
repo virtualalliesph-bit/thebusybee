@@ -30,7 +30,7 @@
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
-            "padding-block-start": 48,
+            "padding-block-start": 46,
             "padding-block-end": 48,
             "padding-inline-start": 48,
             "padding-inline-end": 48
@@ -74,7 +74,7 @@
         "full_frame_on_mobile": false,
         "slideshow_gap": 12,
         "corner_radius": 0,
-        "slide_height": "small",
+        "slide_height": "medium",
         "content_position": "on-media",
         "background_color": "",
         "icons_style": "chevron",
