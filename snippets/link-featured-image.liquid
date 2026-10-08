@@ -28,6 +28,14 @@
       }}
     {% endif %}
   {% endif %}
+{% elsif link.type == 'product_link' %}
+  {% if link.object.featured_image %}
+    {{
+      link.object.featured_image
+      | image_url: width: 800
+      | image_tag: loading: 'lazy', class: class, sizes: image_sizes
+    }}
+  {% endif %}
 {% elsif link.type == 'collections_link' %}
   {% assign collection_object = collections | where: 'featured_image' | first %}
   {% if collection_object.featured_image %}
