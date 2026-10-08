@@ -42,9 +42,10 @@
 
   if menu_content_type == 'collection_images'
     assign collection_links = parent_link.links | where: 'type', 'collection_link'
+    assign product_links = parent_link.links | where: 'type', 'product_link'
     assign catalog_links = parent_link.links | where: 'type', 'catalog_link'
     assign collection_list_links = parent_link.links | where: 'type', 'collections_link'
-    if collection_links.size == 0 and catalog_links.size == 0 and collection_list_links.size == 0
+    if collection_links.size == 0 and product_links.size == 0 and catalog_links.size == 0 and collection_list_links.size == 0
       assign menu_content_type = 'text'
     endif
   endif
@@ -95,7 +96,7 @@
 
         if menu_content_type == 'collection_images'
           assign should_break_columns = false
-          # For collection image mode, we have an 8-column grid when 4 or fewer parent links are used. Set column span to 2 in that case, otherwise use 1 column
+          # For image-card mode, we have an 8-column grid when 4 or fewer parent links are used. Set column span to 2 in that case, otherwise use 1 column
           if parent_link.links.size <= 4
             assign span_class = 'mega-menu__column--wide-collection-image'
           endif
