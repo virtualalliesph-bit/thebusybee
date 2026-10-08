@@ -1,0 +1,70 @@
+/* Busy Bee navigation refinements */
+
+@media screen and (min-width: 750px) {
+  /* Give the pointer a forgiving bridge between the nav label and mega menu. */
+  #header-component[data-menu-style='menu'] .menu-list__list-item:has(> .menu-list__submenu) {
+    position: relative;
+  }
+
+  #header-component[data-menu-style='menu'] .menu-list__list-item:has(> .menu-list__submenu)::after {
+    content: '';
+    position: absolute;
+    inset-inline: -16px;
+    top: calc(100% - 3px);
+    height: 26px;
+    background: transparent;
+    pointer-events: auto;
+  }
+
+  /* Keep the dropdown roomy enough to enter without making it oversized. */
+  #header-component .menu-list__submenu {
+    --submenu-padding-block-start: 24px !important;
+    --submenu-padding-block-end: 28px !important;
+  }
+
+  #header-component .menu-list__submenu-inner {
+    border-top: 1px solid rgb(189 126 81 / 16%);
+  }
+
+  #header-component .mega-menu__grid {
+    gap: 22px;
+  }
+
+  #header-component .mega-menu__link {
+    color: #000;
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+
+  #header-component .mega-menu__link--parent {
+    font-family: var(--font-heading--family);
+    color: #bd7e51;
+  }
+
+  #header-component .mega-menu__link-image {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fbe6c8;
+    margin-bottom: 10px;
+  }
+
+  #header-component .mega-menu__link-image img {
+    transition: transform 220ms ease;
+  }
+
+  #header-component .mega-menu__link:hover .mega-menu__link-image img,
+  #header-component .mega-menu__link:focus-visible .mega-menu__link-image img {
+    transform: scale(1.025);
+  }
+
+  #header-component .mega-menu__column {
+    min-width: 0;
+  }
+}
+
+/* Make the mobile hierarchy easier to scan. */
+@media screen and (max-width: 749px) {
+  #header-component .header__drawer {
+    --header-drawer-min-height: 56px;
+  }
+}
