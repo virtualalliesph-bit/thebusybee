@@ -42,16 +42,19 @@
   }
 
   #header-component .mega-menu__link-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 14px;
     overflow: hidden;
     background: #fbe6c8;
     margin-bottom: 10px;
-  }
-
-  #header-component .mega-menu__link-image img {
     transition: transform 220ms ease;
   }
 
+  #header-component .mega-menu__link:hover > .mega-menu__link-image,
+  #header-component .mega-menu__link:focus-visible > .mega-menu__link-image,
   #header-component .mega-menu__link:hover .mega-menu__link-image img,
   #header-component .mega-menu__link:focus-visible .mega-menu__link-image img {
     transform: scale(1.025);
